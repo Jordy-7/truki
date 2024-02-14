@@ -1,0 +1,44 @@
+.filtros {
+  padding: 5px 10px;
+  padding-top: 0;
+  position: sticky;
+  top: 70px;
+  left: 0;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.filtros-titulo {
+  text-align: left;
+  font-weight: 400;
+  padding: 10px 0;
+  color: var(--font-title-color);
+}
+
+.filtros-lista {
+}
+
+.filtros-lista li label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--font-paragraph-color);
+  transition: .2s;
+  cursor: pointer;
+}
+.filtros-lista li label:hover {
+  transform: translateX(5px);
+}
+
+.filtros div:hover .filtros-lista li label:not(:hover){
+  opacity: .5;
+}
+
+.filtros-lista li label input {
+  accent-color: #000;
+}

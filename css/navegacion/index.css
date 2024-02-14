@@ -1,0 +1,72 @@
+/* estilos de la barra de navegacion */
+/* navbar: logo, boscador y menu*/
+
+.head {
+  background-color: var(--bg);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 90px;
+}
+
+.logo {
+  text-align: left;
+  color: var(--font-title-color);
+}
+
+.logo a {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.search {
+  text-align: center;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.links {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.links ul li {
+  margin: 0 10px;
+}
+
+.links ul li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--font-title-color);
+}

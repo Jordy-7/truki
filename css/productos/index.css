@@ -1,0 +1,76 @@
+/*<div class="productos">
+        <div class="producto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-thsyY7pcpafX5U5CN_fkREa_Bmrvak0sRg&usqp=CAU"
+            alt="Producto 3">
+          <div class="producto-info">
+            <h2 class="name-product">Producto 3</h2>
+            <p class="description">Descripción del producto 3</p>
+            <p class="price">Precio: $300</p>
+            <button>Comprar</button>
+          </div>
+        </div>*/
+.productos-contenendor {
+  text-align: center;
+  border-left: 1px solid var(---border-color);
+  padding: 0 10px;
+}
+
+.productos-titulo {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.productos {
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.producto {
+  background-color: var(--color-card);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.producto img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.producto-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 2px;
+  padding-top: 20px;
+}
+
+.producto-info .name-product {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: var(--font-title-color);
+}
+
+.producto-info .description {
+  font-size: 1em;
+  color: var(--font-paragraph-color-2);
+}
+
+.producto-info .price {
+  font-size: 1.3em;
+  font-weight: 500;
+  color: var(--font-title-color);
+  margin-top: 10px;
+}
+
+.producto-info button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background: var(--color-500);
+  color: #fff;
+  margin-top: 10px;
+}

@@ -1,0 +1,12 @@
+@import url("nav-bar/index.css");
+@import url("productos/index.css");
+@import url("filtros/index.css");
+@import url("navegacion/index.css");
+@import url("footer/index.css");
+
+.main {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 5px;
+  padding: 10px 0;
+}
