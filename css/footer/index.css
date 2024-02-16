@@ -31,7 +31,7 @@ color: var(--font-title-color);
   display: inline-block;
   margin-right: 10px;
   text-decoration: none;
-  color: var(--color-500);
+  color: var(--primary);
 }
 
 .social-links a:hover {
@@ -51,11 +51,10 @@ color: var(--font-title-color);
 
 .footer-section li a {
   text-decoration: none;
-  color: var(--color-500);
+  color: var(--primary);
 }
 
 .footer-section li a:hover {
-  color: var(--color-600);
   text-decoration: underline;
 }
 

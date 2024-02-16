@@ -19,6 +19,7 @@
         <div class="search">
           <input type="text" placeholder="Buscar...">
         </div>
+
       </div>
       <div class="links">
         <ul>
@@ -26,8 +27,28 @@
           <li><a href="./tienda.html">Tienda</a></li>
           <li><a href="./contacto.html">Contacto</a></li>
           <li><a href="./contacto.html">Favoritos</a></li>
-          <li><button id="btn-tema">🌚</button></li>
+          <li>
+            <button id="btn-tema">
+              <!-- svg luna-->
+             <img src="./image/icons/UilMoon.svg" alt="">
+            </button>
+          </li>
         </ul>
+
+        <div class="handle-theme-container">
+          <button class="handle-theme-default-btn"></button>
+
+     
+          <div class="handle-theme-colors-container">
+            <button class="handle-theme-btn" style="--currentColor: #0093E9" data-value="#0093E9"></button>
+            <button class="handle-theme-btn" style="--currentColor: #FF647C" data-value="#FF647C"></button>
+            <button class="handle-theme-btn" style="--currentColor: #EE9AE5" data-value="#EE9AE5"></button>
+            <button class="handle-theme-btn" style="--currentColor: #FBAB7E" data-value="#FBAB7E"></button>
+            <button class="handle-theme-btn" style="--currentColor: #9599E2" data-value="#9599E2"></button>
+          </div>
+        </div>
+        <!-- separalo chipi tema y color de pagina aparte 
+        background-image: linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%);-->
       </div>
     </nav>
   </header>
@@ -151,16 +172,19 @@
     <section class="productos-contenendor">
       <h2 class="productos-titulo">Catalago</h2>
       <div class="productos">
-        <div class="producto">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-thsyY7pcpafX5U5CN_fkREa_Bmrvak0sRg&usqp=CAU"
-            alt="Producto 3">
-          <div class="producto-info">
-            <h2 class="name-product">Nombre de Producto 3</h2>
-            <p class="description">Descripción del producto 3</p>
-            <p class="price">Precio: $300</p>
-            <button>Comprar</button>
+        <a href="#" class="link-ver-product">
+          <div class="producto">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-thsyY7pcpafX5U5CN_fkREa_Bmrvak0sRg&usqp=CAU"
+              alt="Producto 3">
+            <div class="producto-info">
+              <h2 class="name-product">Nombre de Producto 3</h2>
+              <p class="description">Descripción del producto 3</p>
+              <p class="price">Precio: $300</p>
+              <button>Comprar</button>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="producto">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-thsyY7pcpafX5U5CN_fkREa_Bmrvak0sRg&usqp=CAU"
             alt="Producto 3">

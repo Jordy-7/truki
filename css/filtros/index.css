@@ -17,8 +17,7 @@
   color: var(--font-title-color);
 }
 
-.filtros-lista {
-}
+.filtros-lista {}
 
 .filtros-lista li label {
   display: flex;
@@ -31,14 +30,15 @@
   transition: .2s;
   cursor: pointer;
 }
+
 .filtros-lista li label:hover {
   transform: translateX(5px);
 }
 
-.filtros div:hover .filtros-lista li label:not(:hover){
+.filtros div:hover .filtros-lista li label:not(:hover) {
   opacity: .5;
 }
 
 .filtros-lista li label input {
-  accent-color: #000;
+  accent-color: var(--primary);
 }

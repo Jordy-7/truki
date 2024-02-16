@@ -1,3 +1,2 @@
 import './global/dark-mode.js';
-
-console.log('...');
+import './global/handle-theme.js';
