@@ -1,34 +1,58 @@
 /* Variables css globales */
 
 :root {
-  /*------ colores ------*/
-  --color-50: #E4F7FB;
-  --color-100: #C9EEF7;
-  --color-200: #94DDF0;
-  --color-300: #5ACBE8;
-  --color-400: #24BAE0;
-  /* Principal */
-  --color-500: #1B9FC0;
-  --color-600: #167E98;
-  --color-700: #106074;
-  --color-800: #0B3F4C;
-  --color-900: #062128;
-  --color-950: #030F12;
+  /** temas - colores **/
+  --blue-300: #57C1FF;
+  --blue-400: #24AFFF;
+  --blue-500: #0093E9;
+  --blue-600: #0078BD;
+  --blue-700: #00578A;
+
+  --red-300: #FF9BA5;
+  --red-400: #FF647C;
+  --red-500: #D63447;
+  --red-600: #A82339;
+  --red-700: #73151E;
+
+  --purple-300: #F0C7FF;
+  --purple-400: #E096FF;
+  --purple-500: #BA6BFF;
+  --purple-600: #8B4EB6;
+  --purple-700: #612E8D;
+
+  --orange-300: #FFD8B3;
+  --orange-400: #FFAB7E;
+  --orange-500: #F57F5A;
+  --orange-600: #C84A2E;
+  --orange-700: #8F2D18;
+
+  --gray-300: #B1B5C7;
+  --gray-400: #9599E2;
+  --gray-500: #7478C8;
+  --gray-600: #4F5389;
+  --gray-700: #353A59;
+
+
   /** Colores tema claro */
-  --primary: #fff;
+
   --color-card: #f8f8f8;
   /* Textos */
   --secondary: #000;
   --gris: #f5f5f5;
   --gris-oscuro: #e0e0e0;
   --gris-claro: #f5f5f5;
+  --grey-dark: #333;
+  --grey-dark-2: #555;
+
 
   /* ------------ */
   --bg: #fff;
   --font-title-color: #0a0a0a;
   --font-paragraph-color: #1a1a1a;
   --font-paragraph-color-2: #5a5a5a;
-  ---border-color: #1e1e1eb8;
+  --border-color: #dbdbdb;
+  --border-color-card: #e0e0e0;
+  --border-shadow: #0000001a;
 }
 
 
@@ -43,8 +67,10 @@ body {
 
 /* Cambiar el color de fondo y texto de la selección de texto */
 ::selection {
-  background-color: var(--primary); /* Color de fondo de la selección */
-  color: #fff !important; /* Color del texto de la selección */
+  background-color: var(--primary);
+  /* Color de fondo de la selección */
+  color: #fff !important;
+  /* Color del texto de la selección */
 }
 
 
@@ -53,13 +79,16 @@ body {
 
 .dark {
   /** Colores tema oscuro */
-  --primary: #222;
   --color-card: #1e1e1e;
   /* Textos */
+  --grey-dark: #f8f8f8;
+  --grey-dark-2: #bebebe;
   --bg: #000000;
   --font-title-color: #f8f8f8;
   --font-paragraph-color: #bebebe;
   --font-paragraph-color-2: #8e8e8e;
+  --border-color: #464646;
+  --border-color-card: #636363;
 }
 
 /* Reset -> https://github.com/eduardofierropro/Reset-CSS/blob/main/css/app.css */

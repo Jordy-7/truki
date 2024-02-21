@@ -1,14 +1,24 @@
+import { saveToLocalStorage } from "/script/lib/utils/save-to-local-storage.js";
+import { getToLocalStorage } from "/script/lib/utils/get-to-local-storage.js";
+
 const darkModeBtn = document.getElementById("btn-tema");
+const icon = darkModeBtn.querySelector("img")
+
+window.addEventListener("load", () => {
+  const saveMode = getToLocalStorage("tema")
+
+  if (saveMode) {
+    document.body.classList.add("dark");
+    icon.src = "image/icons/UilSun.svg"
+  }
+
+})
 
 darkModeBtn.addEventListener('click', () => {
-  document.body.classList.toggle("dark");
+  document.body.classList.toggle("dark")
 
   const activo = document.body.classList.contains("dark");
+  icon.src = activo ? "image/icons/UilSun.svg" : "image/icons/UilMoon.svg"
 
-  // Rutas completas de las imágenes
-  const sunImage = "../../image/icons/UilSun.svg";
-  const moonImage = "../../image/icons/UilMoon.svg";
-
-  // Establecer la imagen en función del modo oscuro o claro
-  darkModeBtn.src = activo ? moonImage : sunImage;
+  saveToLocalStorage("tema", activo)
 });
