@@ -15,16 +15,16 @@
 .footer-section {
   margin-right: 20px;
 }
-
+ /* tamaño de la letra no relativo */
 .footer-section h2 {
 color: var(--grey-dark);
-  font-size: 1.5em;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
 .footer-section p {
     max-width: 400px;
-  font-size: 0.9em;
+  font-size: 14px;
   color: var(--font-paragraph-color-2);
 }
 
@@ -72,7 +72,7 @@ color: var(--grey-dark);
 }
 
 .footer-bottom p {
-  font-size: 0.9em;
+  font-size: 14px;
   color: var(--font-paragraph-color-2);
 }
 
