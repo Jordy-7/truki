@@ -10,3 +10,9 @@
   gap: 5px;
   padding: 10px 0;
 }
+
+@media (max-width: 920px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}

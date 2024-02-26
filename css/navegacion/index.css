@@ -3,39 +3,36 @@
 
 .head {
   background-color: var(--bg);
-  padding: 10px 0;
+  padding: 10px 20px;
   position: sticky;
   top: 0;
   left: 0;
-  border-bottom: 1px solid var(--border-color);
+   border-bottom: 1px solid var(--border-color);
 }
 
 .navbar {
   display: grid;
   grid-template-columns: 200px 1fr auto;
   grid-template-areas: "logo search links";
-  gap: 10px;
+  gap: 0 10px;
   align-items: center;
-  padding: 0 10px;
-}
 
-.navbar div:nth-child(1) {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 90px;
+
 }
+/* centrar el logo */
 
 .logo {
   grid-area: logo;
-  color: var(--font-title-color);
+  display: flex;
   align-items: center;
 }
 
 .logo a {
   font-size: 30px;
-  font-weight: 800;
+  font-weight: 700;
+  color: var(--grey-dark-3);
   text-decoration: none;
+
 }
 
 .search {
@@ -45,8 +42,7 @@
 .search input {
   max-width: 300px;
   padding: 10px;
-  border: 1px solid var(--primary);
-  border-radius: 5px;
+  border-radius: 50px;
   font-size: 16px;
   color: var(--font-paragraph-color-2);
   background-color: var(--bg);
@@ -72,21 +68,38 @@
 }
 
 .links ul li a {
+  position: relative;
   text-decoration: none;
   font-weight: 500;
   font-size: 20px;
-  color: var(--font-title-color);
+  color: var(--grey-dark-3);
 }
 
-.links ul li a:hover {
-  color: var(--primary);
-  text-decoration: underline;
+.links ul li a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: .3s;
+}
+
+.links ul li a:hover::before {
+  width: 100%;
 }
 
 #btn-tema {
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; padding: 3px;
+}
+
+#btn-tema:hover {
+ 
+  background: var(--transparent-2);
 }
 
 .handle-theme-container {
@@ -115,9 +128,9 @@
   top: 20px;
   right: -30%;
   padding: 5px 10px;
-
-  background: #ffffffeb;
+  background: var(--transparent);
   transition: .2s;
+  border-radius: 5px;
 }
 
 .handle-theme-btn {
@@ -138,4 +151,17 @@
   opacity: 1;
   visibility: visible;
   right: -50%
+}
+
+/* estilo responsive des de 1020px que desde ahi se adapte a pantallas mas pequeñas */
+
+@media (max-width: 1020px) {
+  .navbar {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "search links";
+  }
+
+  .logo {
+    display: none;
+  }
 }

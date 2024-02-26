@@ -21,14 +21,16 @@ function showProducts(arr) {
     element.innerHTML = `
     <a href="#" class="link-ver-product">
       <div class="producto">
-        <img
+        <div class="image">
+          <img
           src="${image}"
           alt="Producto 3">
+        </div>
         <div class="producto-info">
           <h2 class="name-product">${title}</h2>
           <p class="description">${description}</p>
           <p class="price">${formatPrice}</p>
-          <button>Comprar</button>
+          <button>Ver producto</button>
         </div>
       </div>
     </a>
