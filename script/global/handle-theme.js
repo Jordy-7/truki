@@ -1,5 +1,5 @@
-import { saveToLocalStorage } from "/script/lib/utils/save-to-local-storage.js";
-import { getToLocalStorage } from "/script/lib/utils/get-to-local-storage.js";
+import { saveToLocalStorage } from "../script/lib/utils/save-to-local-storage.js";
+import { getToLocalStorage } from "../script/lib/utils/get-to-local-storage.js";
 
 const allBtn = document.querySelectorAll(".handle-theme-btn")
 
