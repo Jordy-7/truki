@@ -24,7 +24,7 @@ color: var(--grey-dark);
 
 .footer-section p {
     max-width: 400px;
-  font-size: 1em;
+  font-size: 0.9em;
   color: var(--font-paragraph-color-2);
 }
 
