@@ -1,4 +1,4 @@
-import { getProducts } from "/script/lib/services/get-products.js"
+import { getProducts } from "../script/lib/services/get-products.js"
 const productContainer = document.querySelector("#productos")
 const productLoading = productContainer.querySelector("span")
 
