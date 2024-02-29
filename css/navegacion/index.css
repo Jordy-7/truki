@@ -40,6 +40,7 @@
 }
 
 .search input {
+  width: 100%;
   max-width: 300px;
   padding: 10px;
   border-radius: 50px;
@@ -47,6 +48,7 @@
   color: var(--font-paragraph-color-2);
   background-color: var(--bg);
   transition: .3s;
+  border: 1px solid var(--border-color);
 }
 
 .links {
@@ -153,15 +155,12 @@
   right: -50%
 }
 
-/* estilo responsive des de 1020px que desde ahi se adapte a pantallas mas pequeñas */
+/* estilo responsive des de 1020px que desde ahi se adapte a pantallas mas pequeñas como celulares
+estilo para el menu hamburguesa*/
 
-@media (max-width: 1020px) {
+@media (max-width: 920px) {
   .navbar {
-    grid-template-columns: 1fr auto;
-    grid-template-areas: "search links";
+    overflow: hidden;
   }
-
-  .logo {
-    display: none;
-  }
+  
 }

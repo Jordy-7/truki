@@ -64,12 +64,25 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+    overflow-x: auto;
   }
-  .filtros-titulo {
+
+  .content-list-filtros {
+    min-width: 240px;
+    margin-right: 20px;
   }
+
+  /* dar estilos a la barra de scroll */
+  .filtros::-webkit-scrollbar {
+    height: 10px;
+  }
+
   .filtros-lista {
     column-count: 2;
   }
+
   .filtros-lista li {
     margin: 0;
   }
