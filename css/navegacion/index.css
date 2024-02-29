@@ -3,40 +3,38 @@
 
 .head {
   background-color: var(--bg);
-  padding: 10px 20px;
   position: sticky;
   top: 0;
   left: 0;
-   border-bottom: 1px solid var(--border-color);
-}
-
-.navbar {
-  display: grid;
-  grid-template-columns: 200px 1fr auto;
-  grid-template-areas: "logo search links";
-  gap: 0 10px;
+  border-bottom: 1px solid var(--border-color);
+  z-index: 5000;
+  width: 100%;
+  display: flex;
   align-items: center;
-
-
+  justify-content: space-between;
+  padding: 10px;
+  gap: 40px;
+  height: 60px;
 }
+
 /* centrar el logo */
 
 .logo {
-  grid-area: logo;
-  display: flex;
-  align-items: center;
+  font-size: 30px;
+  color: var(--grey-dark);
+  width: max-content;
 }
 
-.logo a {
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--grey-dark-3);
-  text-decoration: none;
-
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .search {
-  grid-area: search;
+  flex-grow: 1;
 }
 
 .search input {
@@ -96,11 +94,12 @@
   cursor: pointer;
   width: 25px;
   height: 25px;
-  border-radius: 50%; padding: 3px;
+  border-radius: 50%;
+  padding: 3px;
 }
 
 #btn-tema:hover {
- 
+
   background: var(--transparent-2);
 }
 
@@ -155,12 +154,80 @@
   right: -50%
 }
 
+
+/* 
+ Btn hamburguer styles
+*/
+
+/* input checkbox */
+#hamburguer {
+  display: none;
+}
+
+.btn-hamburguer {
+  display: none;
+  color: var(--grey-dark);
+  pointer-events: none;
+  border: 1px solid black;
+}
+
 /* estilo responsive des de 1020px que desde ahi se adapte a pantallas mas pequeñas como celulares
 estilo para el menu hamburguesa*/
 
 @media (max-width: 920px) {
-  .navbar {
-    overflow: hidden;
+  .btn-hamburguer {
+    display: block;
   }
-  
+
+  .navbar {
+    padding: 20px 0;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    height: max-content;
+    background-color: var(--bg);
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+  }
+
+  .navbar .search {
+    flex-grow: 0;
+  }
+
+
+  .navbar .links {
+    width: 100%;
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .navbar .links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .navbar .links ul li {
+    width: max-content;
+  }
+
+  .handle-theme-container {
+    width: max-content;
+    margin: 30px auto;
+
+  }
+
+  #hamburguer:checked~.navbar {
+    opacity: 1;
+    visibility: visible;
+  }
 }

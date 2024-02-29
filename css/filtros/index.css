@@ -44,7 +44,14 @@
   color: var(--primary);
 }
 
-.filtros-lista li label input:checked + span {
+.filtros-lista li label span {
+  text-wrap: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.filtros-lista li label input:checked+span {
   color: var(--primary);
 }
 
@@ -61,17 +68,22 @@
   .filtros {
     position: static;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    flex-direction: row;
     border-bottom: 1px solid var(--border-color);
     overflow: hidden;
     overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
   }
 
   .content-list-filtros {
-    min-width: 240px;
-    margin-right: 20px;
+    width: 100%;
+    min-width: 100%;
+    scroll-snap-align: center;
+    padding: 10px;
   }
 
   /* dar estilos a la barra de scroll */
