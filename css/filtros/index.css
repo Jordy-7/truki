@@ -74,14 +74,12 @@
     overflow: hidden;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 5px;
     margin: 0;
     padding: 0;
   }
 
   .content-list-filtros {
     width: 100%;
-    min-width: 100%;
     scroll-snap-align: center;
     padding: 10px;
   }
