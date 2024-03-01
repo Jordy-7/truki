@@ -11,16 +11,23 @@
 
 <body>
   <header class="head">
+    <a class="logo" href="./index.html">
+      <h1>
+        Truki
+      </h1>
+    </a>
+
+    <!-- btn hamburguer - responsive -->
+    <input type="checkbox" id="hamburguer">
+
+    <label for="hamburguer">
+      <button class="btn-hamburguer">Abrir menu</button>
+    </label>
 
     <nav class="navbar">
-
-      <div class="logo">
-        <a href="./index.html">Truki</a>
-      </div>
-
-      <div class="search">
-        <input type="text" placeholder="Buscar...">
-      </div>
+      <form class="search">
+        <input type="search" placeholder="Buscar...">
+      </form>
 
       <div class="links">
         <ul>
@@ -167,7 +174,7 @@
 
     <!-- Productos container -->
     <section class="productos-contenendor">
-      
+
       <div id="productos" class="productos">
         <span>Cargando...</span>
       </div>
