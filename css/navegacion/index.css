@@ -233,17 +233,28 @@
 
   .handle-theme-colors-container {
     flex-direction: row;
+    justify-content: flex-start;
     gap: 5px;
-    top: 0;
-    padding: 0;
-    left: 35px;
+    top: -5px;
+    padding: 0 5px;
+    left: 34px;
+    height: 40px;
+    width: 150px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    border: 2px solid var(--primary);
+    border-radius: 25px;
   }
 
   .handle-theme-btn {
-    width: 30px;
+    min-width: 30px;
     height: 30px;
   }
-  
+
+  .handle-theme-btn:hover {
+    transform: none;
+  }
+
   .hamburguer {
     width: 50px;
     height: 30px;
