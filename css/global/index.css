@@ -1,37 +1,6 @@
 /* Variables css globales */
 
 :root {
-  /** temas - colores **/
-  --blue-300: #57C1FF;
-  --blue-400: #24AFFF;
-  --blue-500: #0093E9;
-  --blue-600: #0078BD;
-  --blue-700: #00578A;
-
-  --red-300: #FF9BA5;
-  --red-400: #FF647C;
-  --red-500: #D63447;
-  --red-600: #A82339;
-  --red-700: #73151E;
-
-  --purple-300: #F0C7FF;
-  --purple-400: #E096FF;
-  --purple-500: #BA6BFF;
-  --purple-600: #8B4EB6;
-  --purple-700: #612E8D;
-
-  --orange-300: #FFD8B3;
-  --orange-400: #FFAB7E;
-  --orange-500: #F57F5A;
-  --orange-600: #C84A2E;
-  --orange-700: #8F2D18;
-
-  --gray-300: #B1B5C7;
-  --gray-400: #9599E2;
-  --gray-500: #7478C8;
-  --gray-600: #4F5389;
-  --gray-700: #353A59;
-
 
   /** Colores tema claro */
 
@@ -104,7 +73,7 @@ body {
   --bg: #000000;
   --font-title-color: #f8f8f8;
   --font-paragraph-color: #bebebe;
-  --font-paragraph-color-2: #8e8e8e;
+  --font-paragraph-color-2: #d8d8d8;
   --border-color: #252525;
   --border-color-card: #636363;
 }
