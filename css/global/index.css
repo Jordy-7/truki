@@ -44,6 +44,9 @@ body {
   margin: 0 auto; */
   transition: .3s;
   scroll-behavior: smooth;
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
 
 

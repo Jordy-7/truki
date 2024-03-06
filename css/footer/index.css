@@ -43,6 +43,14 @@ color: var(--grey-dark);
   color: var(--color-600);
   text-decoration: underline;
 }
+.footer-section .fas {
+  margin-right: 10px;
+  color: var(--primary);
+}
+
+.footer-content .contact p {
+  margin-top: 10px;
+}
 
 .footer-section ul {
   list-style: none;
