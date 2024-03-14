@@ -74,6 +74,12 @@
 
 /* about-us responsive */
 @media (max-width: 768px) {
+    .about-container {
+        padding:0;
+    }
+
+
+
     .about-us {
         grid-template-columns: 1fr;
     }
@@ -147,6 +153,11 @@
     background-color: var(--grey-dark-4);
     padding: 20px;
     border-radius: 8px;
+}
+
+.contact-info-social h3 {
+    font-size: 1.2em;
+    color: var(--grey-dark-1);
 }
 
 .contact-info-social-redes {
