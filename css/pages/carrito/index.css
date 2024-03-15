@@ -1,0 +1,63 @@
+@import url("../../global/index.css");
+
+.carrito-section {
+  width: 60%;
+  margin: 0 auto;
+
+}
+
+.car-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+
+  & .shopping-product-item {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+
+    & a {
+      display: flex;
+      gap: 10px;
+
+      & img {
+        aspect-ratio: 1/1;
+        width: 50px;
+
+      }
+
+      & p {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        -webkit-line-clamp: 1;
+      }
+    }
+
+    & button {
+      width: 100%;
+      background-color: var(--primary);
+      display: block;
+      text-wrap: nowrap;
+      font-size: 13px;
+      height: max-content;
+      padding: 10px;
+    }
+  }
+}
+
+.total-pay {
+  background-color: rgb(124, 229, 124);
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
