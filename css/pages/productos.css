@@ -1,7 +1,7 @@
 .main-datails {
-    max-width: 1800px;
+    max-width: 1500px;
     padding: 20px;
-    margin: 0 auto;
+    overflow: hidden;
 }
 
 .container-product-details h2 {
@@ -148,9 +148,9 @@
 
 
 /* lista de otros productos */
-.carousel-container {
+.carousel-cards-container {
     position: relative;
-    width: 100%;
+    max-width: 100%; /* Se ajusta al ancho de su contenedor */
     margin: 100px auto;
     overflow: hidden;
 }
@@ -165,7 +165,7 @@
 
 .card {
     flex: 0 0 auto;
-    width: 200px;
+    width: 200px; /* Ancho explícito para las tarjetas */
     height: 300px;
     margin-right: 10px;
     background-color: #f0f0f0;

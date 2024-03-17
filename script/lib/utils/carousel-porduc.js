@@ -75,22 +75,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // lista carousels de productos
 
-const carousel1 = document.querySelector('.carousel-cards');
-const prevBtn1 = document.querySelector('.prev-btn');
-const nextBtn1 = document.querySelector('.next-btn');
+const carousel = document.querySelector('.carousel-cards');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
 
-nextBtn1.addEventListener('click', () => {
-    carousel1.scrollBy({
-        top: 0,
-        left: 300,
-        behavior: 'smooth'
+    nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+            top: 0,
+            left: 300,
+            behavior: 'smooth'
+        });
     });
-});
 
-prevBtn1.addEventListener('click', () => {
-    carousel1.scrollBy({
-        top: 0,
-        left: -300,
-        behavior: 'smooth'
+    prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({
+            top: 0,
+            left: -300,
+            behavior: 'smooth'
+        });
     });
-});
