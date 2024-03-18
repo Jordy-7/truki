@@ -1,7 +1,7 @@
+/* Archivo principal de la tienda */
+@import url("../../global/index.css");
 @import url("productos/index.css");
 @import url("filtros/index.css");
-@import url("navegacion/index.css");
-@import url("footer/index.css");
 
 .main {
   display: grid;

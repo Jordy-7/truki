@@ -18,12 +18,9 @@
   border: 1px solid var(--border-color);
 }
 
-.producto:hover {
-  
-}
+.producto:hover {}
 
-.producto .image {
-}
+.producto .image {}
 
 .producto img {
   height: 200px;
@@ -73,7 +70,7 @@
   margin-top: 10px;
 }
 
-.producto-info button {
+.producto button {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
