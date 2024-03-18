@@ -137,6 +137,7 @@
             "thumbnails";
         grid-template-columns: 1fr;
         gap: 20px;
+        margin: 0 auto;
     }
 
     .carousel-thumbnails {
