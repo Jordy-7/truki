@@ -155,6 +155,7 @@
     min-width: 100%;
     margin: 100px auto;
     overflow: hidden;
+    display: grid;
 }
 
 .carousel-cards {
