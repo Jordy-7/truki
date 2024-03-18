@@ -175,7 +175,7 @@
   border: 1px solid black;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1000px) {
   .navbar {
     padding: 20px 0 0 0;
     position: fixed;
