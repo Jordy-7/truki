@@ -24,6 +24,7 @@
           <li><a href="./tienda.html">Tienda</a></li>
           <li><a href="./contacto.html">Contacto</a></li>
           <li><a href="./nosotros.html">Nosotros</a></li>
+          <li><a href="./carrito.html">Carrito</a></li>
         </ul>
 
         <div class="confg">
@@ -42,7 +43,7 @@
             </div>
           </div>
         </div>
-        
+
       </div>
     </nav>
   </header>

@@ -24,8 +24,8 @@ function showProducts(arr) {
     element.classList.add("productos")
 
     element.innerHTML = `
-    <article  class="producto" data-id="${id}">
-      <a href="#" class="link-ver-product">
+    <article class="producto" data-id="${id}">
+      <a href="producto.html" class="link-ver-product">
         <div>
           <div class="image">
             <img

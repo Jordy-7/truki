@@ -2,6 +2,7 @@
     max-width: 1500px;
     padding: 20px;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .container-product-details h2 {
@@ -64,7 +65,7 @@
 }
 
 .thumbnail.active {
-    border-color: blue;
+    border-color: var(--primary);
 }
 
 .carousel-buttons {
@@ -150,7 +151,7 @@
 /* lista de otros productos */
 .carousel-cards-container {
     position: relative;
-    max-width: 100%; /* Se ajusta al ancho de su contenedor */
+    min-width: 100%;
     margin: 100px auto;
     overflow: hidden;
 }
@@ -165,7 +166,7 @@
 
 .card {
     flex: 0 0 auto;
-    width: 200px; /* Ancho explícito para las tarjetas */
+    width: 200px; 
     height: 300px;
     margin-right: 10px;
     background-color: #f0f0f0;
@@ -180,7 +181,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #333;
+    background-color: var(--primary);
     color: #fff;
     border: none;
     padding: 10px 20px;
