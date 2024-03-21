@@ -1,0 +1,61 @@
+
+  /* Productos destacados */
+  #container {
+    display: grid;
+    place-items: center
+  }
+
+  #slider-container {
+    height: 400px;
+    width: 85vw;
+    max-width: 1400px;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+  }
+
+  #slider-container #slider-products {
+    display: flex;
+    width: 1000%;
+    height: 100%;
+    transition: all .5s;
+  }
+
+  #slider-container #slider-products .slide {
+    height: 90%;
+    margin: auto 10px;
+    background-color: #b5b5b5;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 2px white, -2px -2px 4px 2px white;
+    display: grid;
+    place-items: center;
+  }
+
+  #slider-container #slider-products .slide span {
+    color: white;
+    font-size: 60px;
+  }
+
+  @media only screen and (min-width: 1100px) {
+    #slider-container #slider-products .slide {
+      width: calc(2.5% - 20px);
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    #slider-container #slider-products .slide {
+      width: calc(3.3333333% - 20px);
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    #slider-container #slider-products .slide {
+      width: calc(5% - 20px);
+    }
+  }
+
+  @media only screen and (max-width: 550px) {
+    #slider-container #slider-products .slide {
+      width: calc(10% - 20px);
+    }
+  }
