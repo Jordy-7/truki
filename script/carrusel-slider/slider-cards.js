@@ -1,84 +1,64 @@
+  var slider = document.getElementById('slider-products');
+  var slidesPerPage;
+  var currentPosition = 0;
+  var currentMargin = 0;
+  var slidesCount;
+  var buttons = document.querySelectorAll('.btn');
 
+  // Track touch events
+  var startX, endX;
 
-    // Carrusel de productos destacados
+  function setParams() {
+    var containerWidth = document.getElementById('container').offsetWidth;
+    if (containerWidth < 551) slidesPerPage = 1;
+    else if (containerWidth < 901) slidesPerPage = 2;
+    else if (containerWidth < 1101) slidesPerPage = 3;
+    else slidesPerPage = 4;
 
-    var container = document.getElementById('container')
-    var slider = document.getElementById('slider-products');
-    var slides = document.getElementsByClassName('slide').length;
-    var buttons = document.getElementsByClassName('btn');
+    slidesCount = document.querySelectorAll('.slide').length - slidesPerPage;
+    currentMargin = -currentPosition * (100 / slidesPerPage);
+    slider.style.marginLeft = currentMargin + '%';
+    buttons[0].classList.toggle('inactive', currentPosition === 0);
+    buttons[1].classList.toggle('inactive', currentPosition >= slidesCount);
+  }
 
-    var currentPosition = 0;
-    var currentMargin = 0;
-    var slidesPerPage = 0;
-    var slidesCount = slides - slidesPerPage;
-    var containerWidth = container.offsetWidth;
-    var prevKeyActive = false;
-    var nextKeyActive = true;
+  setParams();
 
-    window.addEventListener("resize", checkWidth);
+  window.addEventListener("resize", setParams);
 
-    function checkWidth() {
-      containerWidth = container.offsetWidth;
-      setParams(containerWidth);
+  function slideLeft() {
+    if (currentPosition !== 0) {
+      slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
+      currentMargin += (100 / slidesPerPage);
+      currentPosition--;
+      setParams();
     }
+  }
 
-    function setParams(w) {
-      if (w < 551) {
-        slidesPerPage = 1;
-      } else {
-        if (w < 901) {
-          slidesPerPage = 2;
-        } else {
-          if (w < 1101) {
-            slidesPerPage = 3;
-          } else {
-            slidesPerPage = 4;
-          }
-        }
-      }
-      slidesCount = slides - slidesPerPage;
-      if (currentPosition > slidesCount) {
-        currentPosition -= slidesPerPage;
-      };
-      currentMargin = - currentPosition * (100 / slidesPerPage);
-      slider.style.marginLeft = currentMargin + '%';
-      if (currentPosition > 0) {
-        buttons[0].classList.remove('inactive');
-      }
-      if (currentPosition < slidesCount) {
-        buttons[1].classList.remove('inactive');
-      }
-      if (currentPosition >= slidesCount) {
-        buttons[1].classList.add('inactive');
-      }
+  function slideRight() {
+    if (currentPosition < slidesCount) {
+      slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
+      currentMargin -= (100 / slidesPerPage);
+      currentPosition++;
+      setParams();
     }
+  }
 
-    setParams();
+  // Touch event handlers
+  slider.addEventListener('touchstart', function(event) {
+    startX = event.touches[0].clientX;
+  });
 
-    function slideLeft() {
-      if (currentPosition != 0) {
-        slider.style.marginLeft = currentMargin + (100 / slidesPerPage) + '%';
-        currentMargin += (100 / slidesPerPage);
-        currentPosition--;
-      };
-      if (currentPosition === 0) {
-        buttons[0].classList.add('inactive');
-      }
-      if (currentPosition < slidesCount) {
-        buttons[1].classList.remove('inactive');
-      }
-    };
+  slider.addEventListener('touchmove', function(event) {
+    endX = event.touches[0].clientX;
+  });
 
-    function slideRight() {
-      if (currentPosition != slidesCount) {
-        slider.style.marginLeft = currentMargin - (100 / slidesPerPage) + '%';
-        currentMargin -= (100 / slidesPerPage);
-        currentPosition++;
-      };
-      if (currentPosition == slidesCount) {
-        buttons[1].classList.add('inactive');
-      }
-      if (currentPosition > 0) {
-        buttons[0].classList.remove('inactive');
-      }
-    };
+  slider.addEventListener('touchend', function() {
+    var diffX = startX - endX;
+    if (diffX > 50) {
+      slideRight(); // Swipe left
+    } else if (diffX < -50) {
+      slideLeft(); // Swipe right
+    }
+  });
+
