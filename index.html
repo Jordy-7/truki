@@ -17,6 +17,9 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
 
+  <!-- scripts -->
+  <script src="./script/global/common.js"></script>
+
 </head>
 
 <body>
@@ -27,59 +30,15 @@
   -->
 
   <!-- navbar -->
-  <header class="head">
-    <a class="logo" href="./index.html">
-      <h1>
-        TRUKI
-      </h1>
-    </a>
-
-    <!-- btn hamburguer - responsive -->
-    <input type="checkbox" id="hamburguer">
-    <label for="hamburguer" class="hamburguer">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </label>
-
-    <nav class="navbar">
-      <form class="search">
-        <input id="search-input" type="search" placeholder="Buscar...">
-      </form>
-
-      <div class="links">
-        <ul>
-          <li><a href="./index.html">Inicio</a></li>
-          <li><a href="./tienda.html">Tienda</a></li>
-          <li><a href="./contacto.html">Contacto</a></li>
-          <li><a href="./nosotros.html">Nosotros</a></li>
-          <li><a href="./carrito.html">Carrito</a></li>
-        </ul>
-
-        <div class="confg">
-          <button id="btn-tema">
-            <img src="image/icons/UilMoon.svg">
-          </button>
-
-          <div class="handle-theme-container">
-            <button class="handle-theme-default-btn"></button>
-            <div class="handle-theme-colors-container">
-              <button class="handle-theme-btn" style="--currentColor: #0093E9" data-value="#0093E9"></button>
-              <button class="handle-theme-btn" style="--currentColor: #FF647C" data-value="#FF647C"></button>
-              <button class="handle-theme-btn" style="--currentColor: #EE9AE5" data-value="#EE9AE5"></button>
-              <button class="handle-theme-btn" style="--currentColor: #FBAB7E" data-value="#FBAB7E"></button>
-              <button class="handle-theme-btn" style="--currentColor: #9599E2" data-value="#9599E2"></button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </nav>
-  </header>
+  <div id="headerContainer"></div>
 
   <!-- Content -->
 
   <main>
+
+    <!-- Carrusel banner swiper -->
+    
+
     <div class="carousel">
       <div class="carousel-inner">
         <div class="carousel-item">
@@ -183,190 +142,161 @@
 
 
     <!-- slider de productos destacados -->
-    <div id="container">
-      <div id="slider-container">
-        <div id="slider-products">
+    <section class="container">
+      <div class="slider-container">
+        <div class="slider-products">
           <div class="slide">
             <img src="https://via.placeholder.com/150x100" alt="Product Image">
             <h3>Product Name 1</h3>
             <p>$XX.XX</p>
-            <button onclick="addToCart()">Add to Cart</button>
+            <button>Add to Cart</button>
           </div>
           <div class="slide">
             <img src="https://via.placeholder.com/150x100" alt="Product Image">
-            <h3>Product Name 2</h3>
+            <h3>Product Name 1</h3>
             <p>$XX.XX</p>
-            <button onclick="addToCart()">Add to Cart</button>
+            <button>Add to Cart</button>
           </div>
           <div class="slide">
             <img src="https://via.placeholder.com/150x100" alt="Product Image">
-            <h3>Product Name 3</h3>
+            <h3>Product Name 1</h3>
             <p>$XX.XX</p>
-            <button onclick="addToCart()">Add to Cart</button>
+            <button>Add to Cart</button>
           </div>
           <div class="slide">
             <img src="https://via.placeholder.com/150x100" alt="Product Image">
-            <h3>Product Name 4</h3>
+            <h3>Product Name 1</h3>
             <p>$XX.XX</p>
-            <button onclick="addToCart()">Add to Cart</button>
+            <button>Add to Cart</button>
           </div>
           <div class="slide">
             <img src="https://via.placeholder.com/150x100" alt="Product Image">
-            <h3>Product Name 5</h3>
+            <h3>Product Name 1</h3>
             <p>$XX.XX</p>
-            <button onclick="addToCart()">Add to Cart</button>
+            <button>Add to Cart</button>
           </div>
           <div class="slide">
             <img src="https://via.placeholder.com/150x100" alt="Product Image">
-            <h3>Product Name 6</h3>
+            <h3>Product Name 1</h3>
             <p>$XX.XX</p>
-            <button onclick="addToCart()">Add to Cart</button>
+            <button>Add to Cart</button>
           </div>
           <div class="slide">
             <img src="https://via.placeholder.com/150x100" alt="Product Image">
-            <h3>Product Name 7</h3>
+            <h3>Product Name 1</h3>
             <p>$XX.XX</p>
-            <button onclick="addToCart()">Add to Cart</button>
+            <button>Add to Cart</button>
           </div>
           <div class="slide">
             <img src="https://via.placeholder.com/150x100" alt="Product Image">
-            <h3>Product Name 8</h3>
+            <h3>Product Name 1</h3>
             <p>$XX.XX</p>
-            <button onclick="addToCart()">Add to Cart</button>
+            <button>Add to Cart</button>
           </div>
           <div class="slide">
             <img src="https://via.placeholder.com/150x100" alt="Product Image">
-            <h3>Product Name 9</h3>
+            <h3>Product Name 1</h3>
             <p>$XX.XX</p>
-            <button onclick="addToCart()">Add to Cart</button>
+            <button>Add to Cart</button>
           </div>
           <div class="slide">
             <img src="https://via.placeholder.com/150x100" alt="Product Image">
-            <h3>Product Name 10</h3>
+            <h3>Product Name 1</h3>
             <p>$XX.XX</p>
-            <button onclick="addToCart()">Add to Cart</button>
+            <button>Add to Cart</button>
+          </div>
+          <!-- More slides -->
+        </div>
+        <div class="controls">
+          <button class="prev btn">&#10094;</button>
+          <button class="next btn">&#10095;</button>
+        </div>
+      </div>
+      </section>
+
+    <!-- Bento grid -->
+    <section class="bento-grid-section">
+      <div class="bento-grid-container">
+        <div class="bento-grid bn1">
+          <div class="bento-item">
+            <img src="https://via.placeholder.com/300x200" alt="Product Image">
+          </div>
+          <div class="bento-item">
+            <img src="https://via.placeholder.com/300x200" alt="Product Image">
+          </div>
+          <div class="bento-item">
+            <img src="https://via.placeholder.com/300x200" alt="Product Image">
           </div>
         </div>
-        <button class="btn btn-next" onclick="slideRight()">&#10095;</button>
-        <button class="btn btn-prev" onclick="slideLeft()">&#10094;</button>
+        <div class="bento-grid bn2">
+          <div class="bento-item">
+            <img src="https://via.placeholder.com/300x150" alt="Product Image">
+          </div>
+          <div class="bento-item">
+            <img src="https://via.placeholder.com/300x150" alt="Product Image">
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+    <style>
+      /* Bento grid layout */
+      .bento-grid-section {
+        margin-top: 20px;
+        padding: 10px;
+        width: 85vw;
+        margin: 0 auto;
+      }
 
-<!-- Bento grid -->
-<section class="bento-grid-section">
-<div class="bento-grid-container">
-  <div class="bento-grid bn1">
-    <div class="bento-item">
-      <img src="https://via.placeholder.com/300x200" alt="Product Image">
-    </div>
-    <div class="bento-item">
-      <img src="https://via.placeholder.com/300x200" alt="Product Image">
-    </div>
-    <div class="bento-item">
-      <img src="https://via.placeholder.com/300x200" alt="Product Image">
-    </div>
-  </div>
-  <div class="bento-grid bn2">
-    <div class="bento-item">
-      <img src="https://via.placeholder.com/300x150" alt="Product Image">
-    </div>
-    <div class="bento-item">
-      <img src="https://via.placeholder.com/300x150" alt="Product Image">
-    </div>
-  </div>
-</div>
-</section>
-<style>
-  /* Bento grid layout */
-  .bento-grid-section {
-    margin-top: 20px;
-    padding: 10px;
-  }
-  .bento-grid-container {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
+      .bento-grid-container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
 
-  .bn1 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
+      .bn1 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
 
-  .bn2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
+      .bn2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
 
-  .bento-grid {
-    margin-top: 10px;
-  }
+      .bento-grid {
+        margin-top: 10px;
+      }
 
-  .bento-item {
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
+      .bento-item {
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
 
-  .bento-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+      .bento-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-  @media (max-width: 700px) {
-    .bn1 {
-      grid-template-columns: repeat(1, 1fr);
-    }
+      @media (max-width: 700px) {
+        .bn1 {
+          grid-template-columns: repeat(1, 1fr);
+        }
 
-    .bn2 {
-      grid-template-columns: repeat(1, 1fr);
-    }
+        .bn2 {
+          grid-template-columns: repeat(1, 1fr);
+        }
 
-  }
-
-</style>
+      }
+    </style>
   </main>
 
 
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section about">
-        <h2>Descubre Truki</h2>
-        <p>Especializada en productos electrónicos y repuestos para PC e informática, Truki ofrece calidad y
-          variedad.</p>
-        <div class="social-links">
-          <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-section contact">
-        <h2>Contacto</h2>
-        <p><i class="fas fa-envelope"></i> info@truki.com</p>
-        <p><i class="fas fa-phone"></i> +123 456 7890</p>
-        <p><i class="fas fa-map-marker-alt"></i> Calle Principal, Ciudad, País</p>
-      </div>
-
-      <div class="footer-section links-f">
-        <h2>Enlaces rápidos</h2>
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Tienda</a></li>
-          <li><a href="#">Contacto</a></li>
-          <li><a href="#">Términos y condiciones</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2024 Truki - Tienda Online.</p>
-    </div>
-  </footer>
+  <div id="footerContainer"></div>
   <!-- scripts -->
   <script type="module" src="script/index.js"></script>
   <!-- Carrusel y slider -->

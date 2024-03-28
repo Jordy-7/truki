@@ -75,3 +75,5 @@ let currentIndex = 0;
 
   createIndicators();
   setInterval(nextSlide, 5000); // Cambia de imagen cada 5 segundos
+
+
