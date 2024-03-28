@@ -1,29 +1,17 @@
 /* botones de deslizamiento carrusel y slider */
-.btn {
-    width: 40px;
+.swiper-navBtn {
+    color: #ffffff;
     height: 40px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--primary);
-    color: #fff;
-    border: none;
+    width: 40px;
+    background: var(--primary);
     border-radius: 50%;
-    cursor: pointer;
-    z-index: 2;
-}
-
-.btn:hover {
-    border: 2px solid #fff;
-}
-
-
-.btn-prev,
-.prev {
-    left: 10px;
-}
-
-.btn-next,
-.next {
-    right: 10px;
-}
+  }
+  
+  .swiper-navBtn::before,
+  .swiper-navBtn::after {
+    font-size: 18px;
+  }
+  
+  .swiper-pagination-bullet {
+    background-color: var(--primary);
+  }
