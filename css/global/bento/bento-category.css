@@ -26,14 +26,16 @@
     border: 1px solid #e0e0e0;
   }
 
+  .categoria:hover {
+    background-color: #e7e7e7;
+    outline: 2px solid var(--primary);
+    outline-offset: -1px;
+  }
+
   .text-categoria {
     font-size: 1.5rem;
     font-weight: 500;
     color: #333;
-  }
-
-  .categoria:hover {
-    background-color: #e0e0e0;
   }
 
   @media (max-width: 900px) {
@@ -89,6 +91,11 @@
     width: 100%;
     background-color: var(--bg);
     border-radius: 1rem;
+  }
+
+  .bento__item:hover {
+    outline: 2px solid var(--primary);
+    outline-offset: -1px;
   }
 
   .bento__item:nth-child(1),

@@ -1,63 +1,86 @@
 @import url("../../global/index.css");
 
 .carrito-section {
-  width: 60%;
+  max-width: 1200px;
   margin: 0 auto;
-
+  padding: 20px;
 }
 
 .car-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
+}
 
-  & .shopping-product-item {
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-    justify-content: space-between;
+.shopping-product-item {
+  max-width: 400px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fafafa;
+  border-radius: 10px;
+}
 
-    & a {
-      display: flex;
-      gap: 10px;
+.shopping-product-item span {
+  color: var(--primary);
+  font-weight: bold;
+}
 
-      & img {
-        aspect-ratio: 1/1;
-        width: 50px;
+.shopping-product-item a {
+  display: flex;
+  gap: 10px;
+}
 
-      }
+.shopping-product-item img {
+  width: 50px;
+  border-radius: 5px;
+}
 
-      & p {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
+.shopping-product-item p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  margin-bottom: 10px;
+}
 
-        -webkit-line-clamp: 1;
-      }
-    }
+.shopping-product-item button {
+  width: 100%;
+  background-color: var(--primary);
+  color: #fff;
+  display: block;
+  text-wrap: nowrap;
+  font-size: 14px;
+  height: max-content;
+  padding: 10px;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+}
 
-    & button {
-      width: 100%;
-      background-color: var(--primary);
-      display: block;
-      text-wrap: nowrap;
-      font-size: 13px;
-      height: max-content;
-      padding: 10px;
-    }
-  }
+.shopping-product-item button:hover {
+  background-color: transparent;
+  color: var(--primary);
 }
 
 .total-pay {
-  background-color: rgb(124, 229, 124);
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 5px;
+  background-color: #63be68;
   text-align: center;
   padding: 10px;
+  margin-top: 10px;
   color: #fff;
   position: sticky;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   display: none;
+}
+
+.total-pay:hover {
+  
 }
