@@ -11,7 +11,17 @@
     <title>TRUKI - Tiendad</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
-
+    <!-- Estilos de carrusel y slider -->
+    <!-- swiper -->
+    <link rel="stylesheet" href="css/global/carrusel-slider/swiper/swiper-bundle.min.css">
+    <!-- slider - productos destacados -->
+    <link rel="stylesheet" href="css/global/carrusel-slider/slider-cards.css">
+    <!-- Comun styles -->
+    <link rel="stylesheet" href="css/global/carrusel-slider/common-styles.css">
+    <!-- swiper -->
+    <script src="script/carrusel-slider/swiper/swiper-bundle.min.js"></script>
+    <!-- slider - productos destacados -->
+    <script src="script/carrusel-slider/slider-cards.js"></script>
     <!-- javascript -->
     <script src="script/index.js" type="module"></script>
     <!-- scripts -->
@@ -26,7 +36,7 @@
     <main class="main-datails">
         <div class="container-product-details">
             <h2>Detalles del Producto</h2>
-            <div class="product-details">
+            <div class="product-info-cont">
                 <div class="sect-carousel">
                     <div class="carousel-container">
                         <div class="carousel-thumbnails">
@@ -36,8 +46,8 @@
                         </div>
                         <div class="carousel">
                             <div class="carousel-buttons">
-                                <button id="prevBtn" class="carousel-button">&#10094;</button>
-                                <button id="nextBtn" class="carousel-button">&#10095;</button>
+                                <button id="prevBtn" class="swiper-navBtn carousel-button">&#10094;</button>
+                                <button id="nextBtn" class="swiper-navBtn carousel-button">&#10095;</button>
                             </div>
                             <img src="https://placehold.co/400x200" alt="Imagen 1">
                             <img src="https://get.wallhere.com/photo/colorful-galaxy-space-nebula-atmosphere-universe-astronomy-TylerCreatesWorlds-outer-space-astronomical-object-101048.jpg"
@@ -67,27 +77,61 @@
                 </div>
             </div>
         </div>
-        </head>
-        <div class="carousel-cards-container">
-            <div class="carousel-cards">
-                <div class="card">Product 1</div>
-                <div class="card">Product 2</div>
-                <div class="card">Product 3</div>
-                <div class="card">Product 4</div>
-                <div class="card">Product 5</div>
-                <div class="card">Product 6</div>
-                <div class="card">Product 7</div>
-                <!-- Add more cards as needed -->
+ 
+       <!-- slider de productos destacados -->
+     <div class="slider-cards-container swiper">
+        <div class="slide-container">
+          <div class="card-wrapper swiper-wrapper">
+            <div class="card swiper-slide">
+              <div class="image-box">
+                <img src="https://via.placeholder.com/300" alt="Product Image" />
+              </div>
+              <div class="product-details">
+                <h3 class="name">Product Name 1</h3>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="price">$10.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
             </div>
-            <button class="prev-btn">Prev</button>
-            <button class="next-btn">Next</button>
+            <div class="card swiper-slide">
+              <div class="image-box">
+                <img src="https://via.placeholder.com/300" alt="Product Image" />
+              </div>
+              <div class="product-details">
+                <h3 class="name">Product Name 2</h3>
+                <p class="description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="price">$19.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="card swiper-slide">
+              <div class="image-box">
+                <img src="https://via.placeholder.com/300" alt="Product Image" />
+              </div>
+              <div class="product-details">
+                <h3 class="name">Product Name 3</h3>
+                <p class="description">Ut enim ad minim veniam, ut aliquip ex ea commodo consequat.</p>
+                <p class="price">$29.99</p>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+              <!-- Add more product cards as needed -->
+            </div>
+          </div>
+          <div class="swiper-button-next swiper-navBtn"></div>
+          <div class="swiper-button-prev swiper-navBtn"></div>
+          <div class="swiper-pagination"></div>
         </div>
+      </div>
 
     </main>
 
     <!-- Footer -->
     <div id="footerContainer"></div>
     <script src="script/lib/utils/carousel-porduc.js"></script>
+    <!-- swiper -->
+    <script src="script/carrusel-slider/swiper/swiper-bundle.min.js"></script>
+    <!-- slider - productos destacados -->
+    <script src="script/carrusel-slider/slider-cards.js"></script>
 </body>
 
 </html>

@@ -15,3 +15,11 @@
   .swiper-pagination-bullet {
     background-color: var(--primary);
   }
+
+
+  .titulo-seccion {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--grey-dark-1);
+  }

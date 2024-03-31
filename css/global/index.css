@@ -7,7 +7,6 @@
 :root {
 
   /** Colores tema claro */
-
   --color-card: #f8f8f8;
   /* Textos */
   --primary: #FFAB7E;
@@ -63,7 +62,6 @@ body {
   color: #fff !important;
   /* Color del texto de la selección */
 }
-
 
 
 /* dark mode */
