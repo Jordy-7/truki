@@ -10,8 +10,9 @@ if ($conn->connect_error) {
 $conn->set_charset("utf8");
 
 // Obtener categorías y marcas seleccionadas del formulario
-$categoriasSeleccionadas = $_POST['categorias'];
-$marcasSeleccionadas = $_POST['marcas'];
+$categoriasSeleccionadas = isset($_POST['categorias']) ? $_POST['categorias'] : array();
+$marcasSeleccionadas = isset($_POST['marcas']) ? $_POST['marcas'] : array();
+
 
 // Crear la parte de la consulta SQL para filtrar por categorías
 $whereCategoria = '';
