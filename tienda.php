@@ -76,10 +76,7 @@ $resultMarcas = $conn->query($sqlMarcas);
 
     <!-- Productos container -->
     <section class="productos-contenendor">
-        <div class="productos">
-           
 
-        </div>
     </section>
 </main>
 
@@ -109,7 +106,7 @@ $resultMarcas = $conn->query($sqlMarcas);
                     marcas: marcasSeleccionadas
                 },
                 success: function(response) {
-                    $('.productos').html(response); // Mostrar los productos filtrados
+                    $('.productos-contenendor').html(response); // Mostrar los productos filtrados
                 }
             });
         }
