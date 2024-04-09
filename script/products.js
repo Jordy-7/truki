@@ -19,7 +19,7 @@ function showProducts(arr) {
     element.classList.add("productos")
 
     element.innerHTML = `
-    <a href="producto.html" class="link-ver-product">
+    <a href="detalles.html" class="link-ver-product">
       <div class="producto">
         <div class="image">
           <img

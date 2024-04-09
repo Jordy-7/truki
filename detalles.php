@@ -7,7 +7,7 @@
     <title>Detalles del Producto</title>
     <link rel="stylesheet" href="./css/global/index.css">
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/pages/productos.css">
+    <link rel="stylesheet" href="./css/pages/detalles/productos.css">
     <title>TRUKI - Tiendad</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
@@ -30,7 +30,10 @@
 
 <body>
     <!-- navbar -->
-    <div id="headerContainer"></div>
+    <?php
+    include_once './components/header.php';
+    ?>
+
 
 
     <main class="main-datails">
@@ -126,8 +129,10 @@
     </main>
 
     <!-- Footer -->
-    <div id="footerContainer"></div>
-    <script src="script/lib/utils/carousel-porduc.js"></script>
+    <?php
+    include_once './components/footer.php';
+    ?>
+    <script src="script/carrusel-slider/product-details.js"></script>
     <!-- swiper -->
     <script src="script/carrusel-slider/swiper/swiper-bundle.min.js"></script>
     <!-- slider - productos destacados -->

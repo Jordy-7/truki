@@ -6,13 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carrito</title>
   <link rel="stylesheet" href="./css/pages/carrito/index.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
   <!-- scripts -->
   <script src="./script/global/common.js"></script>
 </head>
 
 <body>
       <!-- navbar -->
-      <div id="headerContainer"></div>
+      <?php
+    include_once './components/header.php';
+    ?>
+
 
   <main class="main">
     <section class="carrito-section">
@@ -25,7 +30,9 @@
   </main>
 
   <!-- Footer -->
-  <div id="footerContainer"></div>
+  <?php
+    include_once './components/footer.php';
+    ?>
 
   <script type="module" src="script/pages/carrito/index.js"></script>
 </body>

@@ -19,7 +19,10 @@
 
 <body>
       <!-- navbar -->
-  <div id="headerContainer"></div>
+      <?php
+    include_once './components/header.php';
+    ?>
+
     <main class="main-info">
         <div class="contact-container">
             <h1>Contacto - Truki</h1>
@@ -72,7 +75,9 @@
 
 
     <!-- Footer -->
-    <div id="footerContainer"></div>
+    <?php
+    include_once './components/footer.php';
+    ?>
 </body>
 
 </html>
