@@ -1,17 +1,13 @@
 .productos-contenendor {
   border-left: 2px solid var(--border-color);
-  padding: 0 10px;
-}
-
-.productos {
-  max-width: 350px;
-  padding: 10px 0;
+  padding: 10px 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
 }
 
 .producto {
+  max-width: 350px;
   border-radius: 8px;
   overflow: hidden;
   transition: .3s;

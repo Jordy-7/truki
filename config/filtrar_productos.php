@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
 
         // Mostrar la tarjeta de producto con los datos obtenidos de la base de datos
         echo '<div class="productos">';
-        echo '<a href="#" class="link-ver-product">';
+        echo '<a href="detalles.php">';
         echo '<div class="producto">';
         echo '<img src="' . $imagenProducto . '" alt="' . $nombreProducto . '">';
         echo '<div class="producto-info">';
