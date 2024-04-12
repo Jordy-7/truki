@@ -1,22 +1,20 @@
 .productos-contenendor {
   border-left: 2px solid var(--border-color);
   padding: 10px 10px;
-  display: ruby;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
   }
 
 .producto {
+height: max-content;
   margin: 10px;
-  max-width: 350px;
   border-radius: 8px;
   overflow: hidden;
   transition: .3s;
   padding: 10px;
   border: 1px solid var(--border-color);
 }
-
-.producto:hover {}
-
-.producto .image {}
 
 .producto img {
   height: 200px;

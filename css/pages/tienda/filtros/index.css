@@ -6,8 +6,17 @@
   display: flex;
   flex-direction: column;
   background-color: var(--bg);
-  padding: 20px 30px;
+  padding: 20px 10px;
   gap: 30px;
+}
+
+.content-list-filtros {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .filtros-titulo {
@@ -19,9 +28,12 @@
 }
 
 .filtros-lista {
+  max-height: 350px;
   list-style: none;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .filtros-lista li {
