@@ -16,7 +16,6 @@
   border: 1px solid var(--border-color);
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
 }
 
 .filtros-titulo {
@@ -94,6 +93,8 @@
     width: 100%;
     scroll-snap-align: center;
     padding: 10px;
+    border: none;
+    border-radius: 0;
   }
 
   /* dar estilos a la barra de scroll */
@@ -103,6 +104,7 @@
 
   .filtros-lista {
     column-count: 2;
+    overflow-x: hidden;
   }
 
   .filtros-lista li {
