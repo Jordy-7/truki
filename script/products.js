@@ -12,19 +12,16 @@ window.addEventListener("load", async () => {
 })
 
 function showProducts(arr) {
-  arr.map(({ title, price, image, description }) => {
-    // documentacion -> https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
+  arr.map(({ id, title, price, image, description }) => {
     const formatPrice = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(price)
     const element = document.createElement("div")
     element.classList.add("productos")
 
     element.innerHTML = `
-    <a href="detalles.html" class="link-ver-product">
+    <a href="detalles.php?producto_id=${id}" class="link-ver-product">
       <div class="producto">
         <div class="image">
-          <img
-          src="${image}"
-          alt="Producto 3">
+          <img src="${image}" alt="Producto ${id}">
         </div>
         <div class="producto-info">
           <h2 class="name-product">${title}</h2>
@@ -34,7 +31,6 @@ function showProducts(arr) {
         </div>
       </div>
     </a>
-    
     `;
 
     fragment.append(element)

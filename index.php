@@ -27,6 +27,7 @@ include_once './config/conexion.php';
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
 
   <!-- scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./script/global/common.js"></script>
 
 </head>
@@ -63,76 +64,86 @@ include_once './config/conexion.php';
       </div>
     </div>
 
-
     <!-- CATEGORIAS -->
-    <section class="categorias-container">
-      <div class="categorias">
-        <div class="categoria">
-          <span class="text-categoria">Todo</span>
-        </div>
-        <div class="categoria">
-          <span class="text-categoria">Mouse</span>
-        </div>
-        <div class="categoria">
-          <span class="text-categoria">Monitores</span>
-        </div>
-        <div class="categoria">
-          <span class="text-categoria">Teclados</span>
-        </div>
-        <div class="categoria">
-          <span class="text-categoria">Audio</span>
-        </div>
-        <div class="categoria">
-          <span class="text-categoria">Accesorios</span>
-        </div>
-        <div class="categoria">
-          <span class="text-categoria">Componentes</span>
-        </div>
-        <div class="categoria">
-          <span class="text-categoria">Perifericos</span>
-        </div>
-      </div>
-    </section>
+<section class="categorias-container">
+  <div class="categorias">
+    <a href="tienda.php?categoria=Todo" class="categoria">
+      <span class="text-categoria">Todo</span>
+    </a>
+    <a href="tienda.php?categoria=Memorias RAM" class="categoria">
+      <span class="text-categoria">Memorias RAM</span>
+    </a>
+    <a href="tienda.php?categoria=Discos Duros" class="categoria">
+      <span class="text-categoria">Discos Duros</span>
+    </a>
+    <a href="tienda.php?categoria=Teclados" class="categoria">
+      <span class="text-categoria">Teclados</span>
+    </a>
+    <a href="tienda.php?categoria=Mouse" class="categoria">
+      <span class="text-categoria">Mouse</span>
+    </a>
+    <a href="tienda.php?categoria=Monitores" class="categoria">
+      <span class="text-categoria">Monitores</span>
+    </a>
+    <a href="tienda.php?categoria=Cargadores" class="categoria">
+      <span class="text-categoria">Cargadores</span>
+    </a>
+    <a href="tienda.php?categoria=Audífonos" class="categoria">
+      <span class="text-categoria">Audífonos</span>
+    </a>
+  </div>
+</section>
 
-
-
-
-<!-- slider de productos destacados generales -->
+    <!-- slider de productos destacados generales -->
     <div class="slider-cards-container swiper">
-    <h1 class="titulo-seccion">Memoria RAM</h1>
-    <div class="slide-container">
+      <h1 class="titulo-seccion">Memoria RAM</h1>
+      <div class="slide-container">
         <div class="card-wrapper swiper-wrapper">
-            <?php
-            // Consulta para obtener todos los productos de la categoría de Monitores (ID 5)
-            $sql = "SELECT * FROM Productos WHERE Categoria_ID = 1";
-            $result = $conn->query($sql);
+          <?php
+          // Consulta para obtener todos los productos de la categoría de Memoria RAM (ID 1)
+          $sql = "SELECT p.*, d.Porcentaje AS Descuento FROM Productos p LEFT JOIN Descuentos d ON p.ID = d.Producto_ID WHERE p.Categoria_ID = 1";
+          $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
-                // Mostrar cada producto como una tarjeta
-                while ($row = $result->fetch_assoc()) {
-                    echo '<div class="card swiper-slide">';
-                    echo '<div class="image-box">';
-                    echo '<img src="' . $row["Portada"] . '" alt="' . $row["Nombre"] . '" />';
-                    echo '</div>';
-                    echo '<div class="product-details">';
-                    echo '<h3 class="name">' . $row["Nombre"] . '</h3>';
-                    // Aquí podrías mostrar la descripción y el precio del producto si lo deseas
-                    echo '<p class="description">' . $row["Descripcion"] . '</p>';
-                    echo '<p class="price">$' . $row["Precio"] . '</p>';
-                    echo '<button class="add-to-cart-btn">Add to Cart</button>';
-                    echo '</div>';
-                    echo '</div>';
-                }
+          if ($result->num_rows > 0) {
+            // Mostrar cada producto como una tarjeta
+            while ($row = $result->fetch_assoc()) {
+              $nombreProducto = $row["Nombre"];
+              $descripcionProducto = $row["Descripcion"];
+              $precioProducto = $row["Precio"];
+              $imagenProducto = $row["Portada"];
+              $descuento = $row["Descuento"];
+
+              echo '<div class="card swiper-slide">';
+              echo '<a href="detalles.php?producto_id=' . $row["ID"] . '" class="card-link">'; // Agregar enlace con el ID del producto
+              echo '<div class="image-box">';
+              echo '<img src="' . $imagenProducto . '" alt="' . $nombreProducto . '" />';
+              echo '</div>';
+              echo '<div class="product-details">';
+              echo '<h3 class="name">' . $nombreProducto . '</h3>';
+              echo '<p class="description">' . $descripcionProducto . '</p>';
+              if ($descuento > 0) {
+                // Mostrar precio con descuento y precio original
+                echo '<p class="price">$' . number_format($precioProducto * (1 - $descuento / 100), 2) . '<span class="descuentoProducto">'.'-' . $descuento . '%</span>';
+                echo '<br><span class="original-price">$' . number_format($precioProducto, 2) . '</span></p>';
             } else {
-                echo "No hay productos disponibles en la categoría de Monitores.";
+                // Mostrar solo precio original si no hay descuento
+                echo '<p class="price">Precio: $' . $precioProducto . '</p>';
             }
-            ?>
+              echo '<button class="add-to-cart-btn">Ver detalles</button>';
+              echo '</div>';
+              echo '</a>'; // Cerrar el enlace
+              echo '</div>';
+            }
+          } else {
+            echo "No hay productos disponibles en la categoría de Memoria RAM.";
+          }
+          ?>
         </div>
         <div class="swiper-button-next swiper-navBtn"></div>
         <div class="swiper-button-prev swiper-navBtn"></div>
         <div class="swiper-pagination"></div>
+      </div>
     </div>
-</div>
 
     <!-- Bento grid -->
     <div class="bento">
@@ -147,86 +158,109 @@ include_once './config/conexion.php';
       </div>
     </div>
 
-    
-<!-- slider de productos destacados generales -->
-<div class="slider-cards-container swiper">
-    <h1 class="titulo-seccion">Discos Duros</h1>
-    <div class="slide-container">
+    <!-- slider de productos destacados generales -->
+    <div class="slider-cards-container swiper">
+      <h1 class="titulo-seccion">Discos Duros</h1>
+      <div class="slide-container">
         <div class="card-wrapper swiper-wrapper">
-            <?php
-            // Consulta para obtener todos los productos de la categoría de Monitores (ID 5)
-            $sql = "SELECT * FROM Productos WHERE Categoria_ID = 2";
-            $result = $conn->query($sql);
+          <?php
+          // Consulta para obtener todos los productos de la categoría de Monitores (ID 5)
+          $sql = "SELECT p.*, d.Porcentaje AS Descuento FROM Productos p LEFT JOIN Descuentos d ON p.ID = d.Producto_ID WHERE p.Categoria_ID = 2";
+          $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
-                // Mostrar cada producto como una tarjeta
-                while ($row = $result->fetch_assoc()) {
-                    echo '<div class="card swiper-slide">';
-                    echo '<div class="image-box">';
-                    echo '<img src="' . $row["Portada"] . '" alt="' . $row["Nombre"] . '" />';
-                    echo '</div>';
-                    echo '<div class="product-details">';
-                    echo '<h3 class="name">' . $row["Nombre"] . '</h3>';
-                    // Aquí podrías mostrar la descripción y el precio del producto si lo deseas
-                    echo '<p class="description">' . $row["Descripcion"] . '</p>';
-                    echo '<p class="price">$' . $row["Precio"] . '</p>';
-                    echo '<button class="add-to-cart-btn">Add to Cart</button>';
-                    echo '</div>';
-                    echo '</div>';
-                }
+          if ($result->num_rows > 0) {
+            // Mostrar cada producto como una tarjeta
+            while ($row = $result->fetch_assoc()) {
+              $nombreProducto = $row["Nombre"];
+              $descripcionProducto = $row["Descripcion"];
+              $precioProducto = $row["Precio"];
+              $imagenProducto = $row["Portada"];
+              $descuento = $row["Descuento"];
+
+              echo '<div class="card swiper-slide">';
+              echo '<a href="detalles.php?producto_id=' . $row["ID"] . '" class="card-link">'; // Agregar enlace con el ID del producto
+              echo '<div class="image-box">';
+              echo '<img src="' . $imagenProducto . '" alt="' . $nombreProducto . '" />';
+              echo '</div>';
+              echo '<div class="product-details">';
+              echo '<h3 class="name">' . $nombreProducto . '</h3>';
+              echo '<p class="description">' . $descripcionProducto . '</p>';
+              if ($descuento > 0) {
+                // Mostrar precio con descuento y precio original
+                echo '<p class="price">$' . number_format($precioProducto * (1 - $descuento / 100), 2) . '<span class="descuentoProducto">'.'-' . $descuento . '%</span>';
+                echo '<br><span class="original-price">$' . number_format($precioProducto, 2) . '</span></p>';
             } else {
-                echo "No hay productos disponibles en la categoría de Monitores.";
+                // Mostrar solo precio original si no hay descuento
+                echo '<p class="price">Precio: $' . $precioProducto . '</p>';
             }
-            ?>
+              echo '<button class="add-to-cart-btn">Ver detalles</button>';
+              echo '</div>';
+              echo '</a>'; // Cerrar el enlace
+              echo '</div>';
+            }
+          } else {
+            echo "No hay productos disponibles en la categoría de Memoria RAM.";
+          }
+          ?>
         </div>
         <div class="swiper-button-next swiper-navBtn"></div>
         <div class="swiper-button-prev swiper-navBtn"></div>
         <div class="swiper-pagination"></div>
+      </div>
     </div>
-</div>
 
-
-   
-<!-- slider de productos destacados generales -->
-<div class="slider-cards-container swiper">
-    <h1 class="titulo-seccion">Teclados</h1>
-    <div class="slide-container">
+    <!-- slider de productos destacados generales -->
+    <div class="slider-cards-container swiper">
+      <h1 class="titulo-seccion">Teclados</h1>
+      <div class="slide-container">
         <div class="card-wrapper swiper-wrapper">
-            <?php
-            // Consulta para obtener todos los productos de la categoría de Monitores (ID 5)
-            $sql = "SELECT * FROM Productos WHERE Categoria_ID = 3";
-            $result = $conn->query($sql);
+          <?php
+          // Consulta para obtener todos los productos de la categoría de Monitores (ID 5)
+          $sql = "SELECT p.*, d.Porcentaje AS Descuento FROM Productos p LEFT JOIN Descuentos d ON p.ID = d.Producto_ID WHERE p.Categoria_ID = 3";
+          $result = $conn->query($sql);
 
-            if ($result->num_rows > 0) {
-                // Mostrar cada producto como una tarjeta
-                while ($row = $result->fetch_assoc()) {
-                    echo '<div class="card swiper-slide">';
-                    echo '<div class="image-box">';
-                    echo '<img src="' . $row["Portada"] . '" alt="' . $row["Nombre"] . '" />';
-                    echo '</div>';
-                    echo '<div class="product-details">';
-                    echo '<h3 class="name">' . $row["Nombre"] . '</h3>';
-                    // Aquí podrías mostrar la descripción y el precio del producto si lo deseas
-                    echo '<p class="description">' . $row["Descripcion"] . '</p>';
-                    echo '<p class="price">$' . $row["Precio"] . '</p>';
-                    echo '<button class="add-to-cart-btn">Add to Cart</button>';
-                    echo '</div>';
-                    echo '</div>';
-                }
+          if ($result->num_rows > 0) {
+            // Mostrar cada producto como una tarjeta
+            while ($row = $result->fetch_assoc()) {
+              $nombreProducto = $row["Nombre"];
+              $descripcionProducto = $row["Descripcion"];
+              $precioProducto = $row["Precio"];
+              $imagenProducto = $row["Portada"];
+              $descuento = $row["Descuento"];
+
+              echo '<div class="card swiper-slide">';
+              echo '<a href="detalles.php?producto_id=' . $row["ID"] . '" class="card-link">'; // Agregar enlace con el ID del producto
+              echo '<div class="image-box">';
+              echo '<img src="' . $imagenProducto . '" alt="' . $nombreProducto . '" />';
+              echo '</div>';
+              echo '<div class="product-details">';
+              echo '<h3 class="name">' . $nombreProducto . '</h3>';
+              echo '<p class="description">' . $descripcionProducto . '</p>';
+              if ($descuento > 0) {
+                // Mostrar precio con descuento y precio original
+                echo '<p class="price">$' . number_format($precioProducto * (1 - $descuento / 100), 2) . '<span class="descuentoProducto">'.'-' . $descuento . '%</span>';
+                echo '<br><span class="original-price">$' . number_format($precioProducto, 2) . '</span></p>';
             } else {
-                echo "No hay productos disponibles en la categoría de Monitores.";
+                // Mostrar solo precio original si no hay descuento
+                echo '<p class="price">Precio: $' . $precioProducto . '</p>';
             }
-            ?>
+              echo '<button class="add-to-cart-btn">Ver detalles</button>';
+              echo '</div>';
+              echo '</a>'; // Cerrar el enlace
+              echo '</div>';
+            }
+          } else {
+            echo "No hay productos disponibles en la categoría de Memoria RAM.";
+          }
+          ?>
         </div>
         <div class="swiper-button-next swiper-navBtn"></div>
         <div class="swiper-button-prev swiper-navBtn"></div>
         <div class="swiper-pagination"></div>
+      </div>
     </div>
-</div>
 
   </main>
-
-
 
   <!-- Footer -->
   <?php

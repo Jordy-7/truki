@@ -18,7 +18,7 @@ $(document).ready(function() {
       // Realizar la consulta AJAX
       $.ajax({
           type: 'POST',
-          url: 'filtrar_productos.php',
+          url: 'config/filtrar_productos.php',
           data: {
               categorias: categoriasSeleccionadas,
               marcas: marcasSeleccionadas

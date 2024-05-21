@@ -1,4 +1,4 @@
-    // Función para cargar dinámicamente el contenido de un archivo HTML
+    /*// Función para cargar dinámicamente el contenido de un archivo HTML
     function loadHTML(url, elementId) {
         fetch(url)
             .then(response => response.text())
@@ -10,5 +10,5 @@
     }
     
     // Cargar el encabezado y el pie de página
-    loadHTML('./layout/header.html', 'headerContainer');
-    loadHTML('./layout/footer.html', 'footerContainer');
+    loadHTML('./components/header.html', 'headerContainer');
+    loadHTML('./components/footer.html', 'footerContainer');*/

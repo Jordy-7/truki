@@ -1,15 +1,21 @@
 <?php
-$servername = "sql10.freesqldatabase.com";
-$database = "sql10697264";
-$username = "sql10697264";
-$password = "nCihHeqJX2";
+// Datos de conexión mysql
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "Truki";
 
 // Crear conexión
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password);
 
 // Verificar conexión
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+}
+
+// Seleccionar la base de datos
+if (!$conn->select_db($database)) {
+    die("Database selection failed: " . $conn->error);
 }
 
 // Establecer la codificación de caracteres
