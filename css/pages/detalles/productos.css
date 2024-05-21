@@ -126,7 +126,7 @@
 .descuento {
     margin-left: 10px;
     background: red;
-    color: var(--primary);
+    color: white;
     font-size: 1rem;
     font-weight: 700;
     border-radius: 5px;
